@@ -1,14 +1,23 @@
+///////////////////////////////////////////////////////////////////////
+// This is where the environment and physics are set for the project //
+///////////////////////////////////////////////////////////////////////
 
+// Import relevant items from other directories //
+
+// System setup/definition
 import { randomVec3Ball } from "./utils/random.js";
-import {State} from "./Computation/State.js";
+import { State } from "./Computation/State.js";
 
-import {DataList} from "./Computation/DataList.js";
+// Data structure
+import { DataList } from "./Computation/DataList.js";
 
-import {ConfigurationSpace} from "./ConfigurationSpace/ConfigurationSpace.js";
-import {Simulation} from "./ConfigurationSpace/Simulation.js";
-import {RenderSim} from "./Visualization/RenderSim.js";
+// Dynamics
+import { ConfigurationSpace } from "./ConfigurationSpace/ConfigurationSpace.js";
+import { Simulation } from "./ConfigurationSpace/Simulation.js";
+import { RenderSim } from "./Visualization/RenderSim.js";
 
-import {euclidean} from "./AmbientSpace/ExampleSpaces/Euclidean.js";
+// Geometries
+import { euclidean } from "./AmbientSpace/ExampleSpaces/Euclidean.js";
 import { hyperbolic } from "./AmbientSpace/ExampleSpaces/HypSpacePoincareBall.js";
 import { spherical } from "./AmbientSpace/ExampleSpaces/SphericalStereoProj.js";
 import { inhomogeneousNeg } from "./AmbientSpace/ExampleSpaces/InhomogeneousNeg.js";
@@ -16,11 +25,13 @@ import { inhomogeneousPos } from "./AmbientSpace/ExampleSpaces/InhomogeneousPos.
 import { h2xe } from "./AmbientSpace/ExampleSpaces/H2xE.js";
 import { s2xe } from "./AmbientSpace/ExampleSpaces/S2xE-Stereo.js";
 
-//set the ambient space for the project
-let ambientSpace = s2xe;
+
+
+// Set the ambient space for the project
+let ambientSpace = euclidean;
 
 //build a configuration space:
-let NumBalls = 3;
+let NumBalls = 4;
 let MaxRad = ambientSpace.obstacle.size/5.;
 
 let radii = [];
